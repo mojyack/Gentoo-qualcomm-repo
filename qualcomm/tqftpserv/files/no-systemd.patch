@@ -1,0 +1,27 @@
+diff --git a/Makefile b/Makefile
+index 3e7760e..bd7d9ef 100644
+--- a/Makefile
++++ b/Makefile
+@@ -5,7 +5,6 @@ LDFLAGS += -lqrtr
+ prefix ?= /usr/local
+ 
+ bindir := $(prefix)/bin
+-servicedir := $(prefix)/lib/systemd/system
+ 
+ SRCS := tqftpserv.c translate.c
+ 
+@@ -14,12 +13,8 @@ OBJS := $(SRCS:.c=.o)
+ $(TQFTPSERV): $(OBJS)
+ 	$(CC) -o $@ $^ $(LDFLAGS)
+ 
+-tqftpserv.service: tqftpserv.service.in
+-	@sed 's+TQFTPSERV_PATH+$(bindir)+g' $< > $@
+-
+-install: $(TQFTPSERV) tqftpserv.service
++install: $(TQFTPSERV)
+ 	@install -D -m 755 $(TQFTPSERV) $(DESTDIR)$(bindir)/$(TQFTPSERV)
+-	@install -D -m 644 tqftpserv.service $(DESTDIR)$(servicedir)/tqftpserv.service
+ 
+ clean:
+-	rm -f $(TQFTPSERV) $(OBJS) tqftpserv.service
++	rm -f $(TQFTPSERV) $(OBJS)
