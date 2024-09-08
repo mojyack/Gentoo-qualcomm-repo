@@ -1,0 +1,12 @@
+diff --git a/meson.build b/meson.build
+index 691697e..077cfdd 100644
+--- a/meson.build
++++ b/meson.build
+@@ -24,4 +24,6 @@ executable('81voltd',
+   'qvd-modem.c',
+   'qvd-server.c',
+   qmi,
+-  dependencies : [libmm, libqrtr])
++  dependencies : [libmm, libqrtr],
++  install : true,
++)

@@ -16,4 +16,4 @@ SLOT="0"
 IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
-
+PATCHES=( "${FILESDIR}/install-exe.patch" )
