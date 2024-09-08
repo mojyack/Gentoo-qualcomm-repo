@@ -11,7 +11,7 @@ EGIT_REPO_URI="https://gitlab.com/flamingradian/81voltd.git"
 EGIT_COMMIT="v$PV"
 
 KEYWORDS="~arm64"
-LICENSE="MIT"
+LICENSE="GPL-2+"
 SLOT="0"
 IUSE=""
 DEPEND=""
