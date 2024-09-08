@@ -14,6 +14,6 @@ KEYWORDS="~arm64"
 LICENSE="GPL-2+"
 SLOT="0"
 IUSE=""
-DEPEND=""
+DEPEND="net-misc/modemmanager qualcomm/qrtr"
 RDEPEND="${DEPEND}"
 PATCHES=( "${FILESDIR}/install-exe.patch" )
